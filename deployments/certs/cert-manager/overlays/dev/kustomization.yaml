@@ -4,9 +4,10 @@ helmCharts:
   - name: cert-manager
     repo: https://charts.bitnami.com/bitnami
     releaseName: cert-manager
-    namespace: cert-manager
+    valuesFile: app-certs-values.yaml
     version: 1.5.13
     includeCRDs: true
+    namespace: cert-manager
   - name: app-certs
     releaseName: app-certs
     valuesFile: app-certs-values.yaml
