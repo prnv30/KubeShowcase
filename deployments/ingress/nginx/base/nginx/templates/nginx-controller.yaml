@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx-controller
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 spec:
   minReadySeconds: 0
   revisionHistoryLimit: 10
@@ -125,7 +125,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 rules:
 - apiGroups:
   - ""
@@ -215,7 +215,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 rules:
 - apiGroups:
   - ""
@@ -335,7 +335,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -343,7 +343,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: ingress-nginx
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -355,7 +355,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -363,7 +363,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: ingress-nginx-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -381,7 +381,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: ingress-nginx
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -400,7 +400,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: ingress-nginx-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: v1
 data:
@@ -415,4 +415,4 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx-controller
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}

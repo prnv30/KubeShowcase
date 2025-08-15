@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
   name: ingress-nginx-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 ---
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
@@ -22,7 +22,7 @@ webhooks:
   clientConfig:
     service:
       name: ingress-nginx-controller-admission
-      namespace: ingress-nginx
+      namespace: {{ .Release.Namespace }}
       path: /networking/v1/ingresses
   failurePolicy: Fail
   matchPolicy: Equivalent
@@ -49,7 +49,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.9.4
   name: ingress-nginx-controller-admission
-  namespace: ingress-nginx
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
   - appProtocol: https
