@@ -18,7 +18,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "https://github.com/prnv30/gitops-argo.git"
+        repoURL: "https://github.com/prnv30/KubeShowcase.git"
         targetRevision: HEAD
         path: '{{ .path.path }}'
       destination:
