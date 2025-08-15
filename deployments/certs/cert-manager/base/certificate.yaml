@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: {{ .Values.certificate.certificateName }}
+  name: hipstershop-tls-cert
   namespace: hipstershop
 spec:
-  secretName: {{ .Values.certificate.secretName }}
+  secretName: hipstershop-tls-cert-secret
   dnsNames:
     - 'store.hipstershop.com'
   issuerRef:

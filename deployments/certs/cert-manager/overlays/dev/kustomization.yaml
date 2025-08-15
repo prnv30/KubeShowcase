@@ -14,17 +14,6 @@ helmCharts:
     valuesFile: app-certs-values.yaml
     namespace: certs
 
-patches:
-  - target:
-      labelSelector: app.kubernetes.io/instance=cert-manager
-    patch: |
-      - op: add
-        path: /metadata/annotations/argocd.argoproj.io~1sync-wave
-        value: "-1"
-
-  - target:
-      labelSelector: app.kubernetes.io/instance=app-certs
-    patch: |
-      - op: add
-        path: /metadata/annotations/argocd.argoproj.io~1sync-wave
-        value: "0"
+resources:
+  - ../../base/cluster-issuer.yaml
+  - ../../base/certificate.yaml
