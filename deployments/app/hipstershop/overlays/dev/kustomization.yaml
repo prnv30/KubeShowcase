@@ -1,0 +1,8 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: hipsterhop
+    releaseName: hipsterhop
+    valuesFile: values.yaml
+    namespace: app
