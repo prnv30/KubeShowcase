@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: dev-hipstershop-appset
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: "https://github.com/prnv30/KubeShowcase.git"
+      revision: HEAD
+      directories: 
+      - path: deployments/*/*/overlays/dev
+  template:
+    metadata:
+      name: '{{index .path.segments 4}}-{{index .path.segments 2}}'
+    spec:
+      project: default
+      source:
+        repoURL: "https://github.com/prnv30/gitops-argo.git"
+        targetRevision: HEAD
+        path: '{{ .path.path }}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{index .path.segments 1}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true

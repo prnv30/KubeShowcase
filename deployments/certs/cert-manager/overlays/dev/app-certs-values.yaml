@@ -1,0 +1,6 @@
+issuer:
+  name: "selfsigned-issuer"
+
+certificate:
+  certificateName: "hipstershop-tls-cert"
+  secretName: "hipstershop-tls-cert-secret"

@@ -1,0 +1,13 @@
+helmGlobals:
+  chartHome: ../../base/
+helmCharts:
+  - name: cert-manager
+    repo: oci://quay.io/jetstack/charts/cert-manager
+    releaseName: cert-manager
+    namespace: cert-manager
+    version: v1.18.2
+    includeCRDs: true
+  - name: app-certs
+    releaseName: app-certs
+    valuesFile: app-certs-values.yaml
+    namespace: cert-manager
