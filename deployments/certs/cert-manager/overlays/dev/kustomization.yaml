@@ -9,11 +9,5 @@ helmCharts:
     includeCRDs: true
     namespace: certs
 
-  - name: app-certs
-    releaseName: app-certs
-    valuesFile: app-certs-values.yaml
-    namespace: certs
-
-resources:
-  - ../../base/cluster-issuer.yaml
-  - ../../base/certificate.yaml
+bases:
+  - ../../base/
