@@ -6,7 +6,6 @@ helmCharts:
     releaseName: cert-manager
     valuesFile: values.yaml
     version: 1.5.13
-    includeCRDs: true
     namespace: certs
 
 bases:

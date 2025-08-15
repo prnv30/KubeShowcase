@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hipstershop-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - 'store.hipstershop.com'
+    secretName: hipstershop-tls-cert-secret
+  rules:
+  - host: 'store.hipstershop.com'
+    http:
+      paths:           
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: "kustomize-backend-service-patch"
+              port:
+                number: 80

@@ -1,0 +1,25 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: nginx
+    releaseName: ingress-nginx
+    valuesFile: values.yaml
+    namespace: nginx
+
+bases:
+  - ../../base/
+
+patches:
+  - path: namespace-patch.yaml
+    target:
+      group: networking
+      version: v1
+      kind: Ingress
+      name: hipstershop-ingress
+  - path: backend-service-patch.yaml
+    target:
+      group: networking
+      version: v1
+      kind: Ingress
+      name: hipstershop-ingress

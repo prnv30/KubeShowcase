@@ -1,0 +1,4 @@
+frontend:
+  namespace: hipstershop
+  name: frontend
+  externalService: true
