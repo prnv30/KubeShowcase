@@ -7,8 +7,26 @@ helmCharts:
     valuesFile: values.yaml
     version: 1.5.13
     includeCRDs: true
-    namespace: cert-manager
+    namespace: certs
+
   - name: app-certs
     releaseName: app-certs
     valuesFile: app-certs-values.yaml
-    namespace: cert-manager
+    namespace: certs
+
+patches:
+  - target:
+      kind: Deployment
+      name: cert-manager
+    patch: |
+      - op: add
+        path: /metadata/annotations/argocd.argoproj.io~1sync-wave
+        value: "-1"
+
+  - target:
+      kind: Deployment
+      name: app-certs
+    patch: |
+      - op: add
+        path: /metadata/annotations/argocd.argoproj.io~1sync-wave
+        value: "0"
