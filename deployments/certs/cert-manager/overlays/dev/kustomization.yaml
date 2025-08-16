@@ -10,3 +10,17 @@ helmCharts:
 
 bases:
   - ../../base/
+
+patches:
+  - path: namespace-patch.yaml
+    target:
+      group: cert-manager
+      version: v1
+      kind: Certificate
+      name: hipstershop-tls-cert
+  - path: namespace-patch.yaml
+    target:
+      group: cert-manager
+      version: v1
+      kind: Issuer
+      name: selfsigned-issuer

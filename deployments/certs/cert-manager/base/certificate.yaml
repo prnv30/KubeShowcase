@@ -2,7 +2,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: hipstershop-tls-cert
-  namespace: hipstershop
 spec:
   secretName: hipstershop-tls-cert-secret
   dnsNames:
