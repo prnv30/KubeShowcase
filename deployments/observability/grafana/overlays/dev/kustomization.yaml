@@ -1,0 +1,10 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: grafana
+    releaseName: grafana
+    repo: https://grafana.github.io/helm-charts
+    version: 12.1.4
+    valuesFile: values.yaml
+    namespace: observability
