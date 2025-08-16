@@ -1,0 +1,38 @@
+server:
+  persistentVolume:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    mountPath: /data
+    size: 4Gi
+
+extraScrapeConfigs: |
+    - job_name: prometheus-node-exporter
+      kubernetes_sd_configs:
+        - role: endpoints
+      relabel_configs:
+        - source_labels: [__meta_kubernetes_endpoints_name]
+          regex: 'node-exporter'
+          action: keep
+
+alertmanager:
+  enabled: true
+
+  persistence:
+    size: 2Gi
+
+  podSecurityContext:
+    runAsUser: 65534
+    runAsNonRoot: true
+    runAsGroup: 65534
+    fsGroup: 65534
+
+kube-state-metrics:
+  enabled: true
+
+prometheus-node-exporter:
+  enabled: true
+  rbac:
+    pspEnabled: false
+  containerSecurityContext:
+    allowPrivilegeEscalation: false

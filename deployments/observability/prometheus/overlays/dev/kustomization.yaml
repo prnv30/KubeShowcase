@@ -1,0 +1,10 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: prometheus
+    releaseName: prometheus
+    repo: https://prometheus-community.github.io/helm-charts
+    version: 27.30.0
+    valuesFile: values.yaml
+    namespace: observability
