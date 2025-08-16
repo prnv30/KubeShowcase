@@ -8,3 +8,20 @@ helmCharts:
     version: 0.93.0
     valuesFile: values.yaml
     namespace: observability
+
+bases:
+  - ../../base/
+
+patches:
+  - path: namespace-patch.yaml
+    target:
+      group: opentelemetry
+      version: v1beta1
+      kind: OpenTelemetryCollector
+      name: otel-collector
+  - path: namespace-patch.yaml
+    target:
+      group: opentelemetry
+      version: v1alpha1
+      kind: Instrumentation
+      name: auto-instrumenter
