@@ -1,0 +1,10 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: opentelemetry-operator
+    releaseName: opentelemetry-operator
+    repo: https://open-telemetry.github.io/opentelemetry-helm-charts
+    version: 0.93.0
+    valuesFile: values.yaml
+    namespace: observability

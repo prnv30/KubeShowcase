@@ -1,0 +1,10 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: tempo
+    releaseName: tempo
+    repo: https://grafana.github.io/helm-charts
+    version: 1.23.3
+    valuesFile: values.yaml
+    namespace: observability

@@ -1,0 +1,17 @@
+manager:
+  extraArgs: [--enable-go-instrumentation]
+
+  ports:
+    metricsPort: 8080
+    webhookPort: 9443
+    healthzPort: 8081
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+crds:
+  create: true

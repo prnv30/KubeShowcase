@@ -1,0 +1,10 @@
+helmGlobals:
+  chartHome: ../../base/
+  
+helmCharts:
+  - name: loki
+    releaseName: loki
+    repo: https://grafana.github.io/helm-charts
+    version: 6.36.1
+    valuesFile: values.yaml
+    namespace: observability
