@@ -1,7 +1,6 @@
 # 🚀 KubeShowcase
 
-**KubeShowcase** is a Kubernetes GitOps demo project that deploys the **HipsterShop** application (10+ microservices) with **enterprise-grade production practices**.  
-It demonstrates how to manage multi-service Kubernetes deployments using **ArgoCD, Helm, Kustomize, Observability stack, and GitOps workflows**.
+**KubeShowcase** is a Kubernetes GitOps demo project that deploys the **HipsterShop** application (10+ microservices) with **enterprise-grade production practices**. It demonstrates how to manage multi-service Kubernetes deployments using **ArgoCD, Helm, Kustomize, Observability stack, and GitOps workflows**.
 
 ---
 
@@ -39,7 +38,7 @@ A full observability pipeline built-in with:
 - **Loki** → Logs  
 - **Tempo** → Distributed Tracing  
 - **Grafana** → Dashboards & Visualization  
-- **OpenTelemetry Operator** → Auto-instrumentation of HipsterShop microservices  
+- **OpenTelemetry Operator** → Auto-instrumentation of all microservices (Go, Python, Java, Node.js, C#)  
 - **Alloy** → Unified telemetry agent (aggregates metrics/logs/traces → forwards to backends)  
 
 ---
@@ -74,8 +73,9 @@ A full observability pipeline built-in with:
 3. Components deployed automatically with **Helm + Kustomize overlays**  
 4. **Observability stack** auto-collects metrics, logs, and traces  
 5. **Ingress + TLS** ready via **NGINX + cert-manager**  
-6. **Secrets synced** securely from AWS Secrets Manager  
-7. ✅ Result → A **production-ready, observable, secure Kubernetes application stack** 🚀  
+6. **Secrets synced** securely from AWS Secrets Manager
+   
+✅ Result → A **production-ready, observable, secure Kubernetes application stack** 🚀  
 
 ---
 
