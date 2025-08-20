@@ -7,14 +7,15 @@ It demonstrates how to manage multi-service Kubernetes deployments using **ArgoC
 
 ## 📂 Repository Structure
 KubeShowcase/
-- argocd/                # ArgoCD GitOps configuration (ApplicationSet + Project)
-- deployments/           # Application + Infrastructure components (Helm + Kustomize)
-   - app/                # HipsterShop microservices
-   - certs/              # TLS certificate lifecycle via cert-manager
-   - ingress/            # NGINX ingress controller + routes
-   - observability/      # Full observability stack (Prometheus, Grafana, Loki, Tempo, OTel, Alloy)
-- src/                   # (Application source code / extensions)
--  README.md             # You are here
+├── argocd/                 # ArgoCD GitOps configuration (ApplicationSet + Project)
+├── deployments/            # Application + Infrastructure components (Helm + Kustomize)
+│   ├── app/                # HipsterShop microservices
+│   ├── certs/              # TLS certificate lifecycle via cert-manager
+│   ├── ingress/            # NGINX ingress controller + routes
+│   └── observability/      # Full observability stack (Prometheus, Grafana, Loki, Tempo, OTel, Alloy)
+├── src/                    # Application source code / extensions
+└── README.md               # You are here
+
 
 
 ---
