@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev-hipstershop
+  namespace: argocd
+spec:
+  description: Project for dev apps from KubeShowcase overlays/dev
+
+  sourceRepos:
+    - https://github.com/prnv30/KubeShowcase.git
+
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: "*"
+
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
+
+  orphanedResources:
+    warn: true

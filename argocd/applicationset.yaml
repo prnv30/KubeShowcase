@@ -16,7 +16,7 @@ spec:
     metadata:
       name: '{{index .path.segments 4}}-{{index .path.segments 2}}'
     spec:
-      project: default
+      project: dev-hipstershop
       source:
         repoURL: "https://github.com/prnv30/KubeShowcase.git"
         targetRevision: HEAD
