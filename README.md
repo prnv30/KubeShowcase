@@ -6,6 +6,7 @@ It demonstrates how to manage multi-service Kubernetes deployments using **ArgoC
 ---
 
 ## 📂 Repository Structure
+```
 KubeShowcase/
 ├── argocd/                 # ArgoCD GitOps configuration (ApplicationSet + Project)
 ├── deployments/            # Application + Infrastructure components (Helm + Kustomize)
@@ -15,7 +16,7 @@ KubeShowcase/
 │   └── observability/      # Full observability stack (Prometheus, Grafana, Loki, Tempo, OTel, Alloy)
 ├── src/                    # Application source code / extensions
 └── README.md               # You are here
-
+```
 
 
 ---
